@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soooofun.dao.DzMapper">
+  <resultMap id="BaseResultMap" type="com.soooofun.pojo.Dz">
+    <id column="d_id" jdbcType="CHAR" property="dId" />
+    <result column="d_title" jdbcType="VARCHAR" property="dTitle" />
+    <result column="d_content" jdbcType="VARCHAR" property="dContent" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="publisher_id" jdbcType="CHAR" property="publisherId" />
+    <result column="has_image" jdbcType="SMALLINT" property="hasImage" />
+    <result column="d_type" jdbcType="VARCHAR" property="dType" />
+    <result column="d_tag" jdbcType="VARCHAR" property="dTag" />
+    <result column="d_brower_num" jdbcType="INTEGER" property="dBrowerNum" />
+    <result column="d_nice_num" jdbcType="INTEGER" property="dNiceNum" />
+    <result column="d_unnice_num" jdbcType="INTEGER" property="dUnniceNum" />
+    <result column="d_comment_num" jdbcType="INTEGER" property="dCommentNum" />
+    <result column="d_share_num" jdbcType="INTEGER" property="dShareNum" />
+    <result column="d_score" jdbcType="DOUBLE" property="dScore" />
+    <result column="d_collection_num" jdbcType="INTEGER" property="dCollectionNum" />
+    <result column="d_sensitive" jdbcType="SMALLINT" property="dSensitive" />
+    <result column="d_report" jdbcType="SMALLINT" property="dReport" />
+    <result column="d_available" jdbcType="SMALLINT" property="dAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    d_id, d_title, d_content, publish_time, publisher_id, has_image, d_type, d_tag, d_brower_num, 
+    d_nice_num, d_unnice_num, d_comment_num, d_share_num, d_score, d_collection_num, 
+    d_sensitive, d_report, d_available
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dz
+    where d_id = #{dId,jdbcType=CHAR}
+  </select>
+
+  <select id="selectDzList" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dz
+    ORDER BY publish_time DESC
+    limit #{0},#{1}
+  </select>
+
+  <select id="selectDzListByType" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dz
+    where d_type = #{0} ORDER BY publish_time DESC
+    limit #{1},#{2}
+  </select>
+
+  <select id="selectDzListBySearch" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dz
+    where d_content like #{0} ORDER BY publish_time DESC
+    limit #{1},#{2}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from dz
+    where d_id = #{dId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.soooofun.pojo.Dz">
+    insert into dz (d_id, d_title, d_content, 
+      publish_time, publisher_id, has_image, 
+      d_type, d_tag, d_brower_num, 
+      d_nice_num, d_unnice_num, d_comment_num, 
+      d_share_num, d_score, d_collection_num, 
+      d_sensitive, d_report, d_available
+      )
+    values (#{dId,jdbcType=CHAR}, #{dTitle,jdbcType=VARCHAR}, #{dContent,jdbcType=VARCHAR}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{publisherId,jdbcType=CHAR}, #{hasImage,jdbcType=SMALLINT}, 
+      #{dType,jdbcType=VARCHAR}, #{dTag,jdbcType=VARCHAR}, #{dBrowerNum,jdbcType=INTEGER}, 
+      #{dNiceNum,jdbcType=INTEGER}, #{dUnniceNum,jdbcType=INTEGER}, #{dCommentNum,jdbcType=INTEGER}, 
+      #{dShareNum,jdbcType=INTEGER}, #{dScore,jdbcType=DOUBLE}, #{dCollectionNum,jdbcType=INTEGER}, 
+      #{dSensitive,jdbcType=SMALLINT}, #{dReport,jdbcType=SMALLINT}, #{dAvailable,jdbcType=SMALLINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.soooofun.pojo.Dz">
+    insert into dz
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dId != null">
+        d_id,
+      </if>
+      <if test="dTitle != null">
+        d_title,
+      </if>
+      <if test="dContent != null">
+        d_content,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="publisherId != null">
+        publisher_id,
+      </if>
+      <if test="hasImage != null">
+        has_image,
+      </if>
+      <if test="dType != null">
+        d_type,
+      </if>
+      <if test="dTag != null">
+        d_tag,
+      </if>
+      <if test="dBrowerNum != null">
+        d_brower_num,
+      </if>
+      <if test="dNiceNum != null">
+        d_nice_num,
+      </if>
+      <if test="dUnniceNum != null">
+        d_unnice_num,
+      </if>
+      <if test="dCommentNum != null">
+        d_comment_num,
+      </if>
+      <if test="dShareNum != null">
+        d_share_num,
+      </if>
+      <if test="dScore != null">
+        d_score,
+      </if>
+      <if test="dCollectionNum != null">
+        d_collection_num,
+      </if>
+      <if test="dSensitive != null">
+        d_sensitive,
+      </if>
+      <if test="dReport != null">
+        d_report,
+      </if>
+      <if test="dAvailable != null">
+        d_available,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dId != null">
+        #{dId,jdbcType=CHAR},
+      </if>
+      <if test="dTitle != null">
+        #{dTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="dContent != null">
+        #{dContent,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publisherId != null">
+        #{publisherId,jdbcType=CHAR},
+      </if>
+      <if test="hasImage != null">
+        #{hasImage,jdbcType=SMALLINT},
+      </if>
+      <if test="dType != null">
+        #{dType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTag != null">
+        #{dTag,jdbcType=VARCHAR},
+      </if>
+      <if test="dBrowerNum != null">
+        #{dBrowerNum,jdbcType=INTEGER},
+      </if>
+      <if test="dNiceNum != null">
+        #{dNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="dUnniceNum != null">
+        #{dUnniceNum,jdbcType=INTEGER},
+      </if>
+      <if test="dCommentNum != null">
+        #{dCommentNum,jdbcType=INTEGER},
+      </if>
+      <if test="dShareNum != null">
+        #{dShareNum,jdbcType=INTEGER},
+      </if>
+      <if test="dScore != null">
+        #{dScore,jdbcType=DOUBLE},
+      </if>
+      <if test="dCollectionNum != null">
+        #{dCollectionNum,jdbcType=INTEGER},
+      </if>
+      <if test="dSensitive != null">
+        #{dSensitive,jdbcType=SMALLINT},
+      </if>
+      <if test="dReport != null">
+        #{dReport,jdbcType=SMALLINT},
+      </if>
+      <if test="dAvailable != null">
+        #{dAvailable,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soooofun.pojo.Dz">
+    update dz
+    <set>
+      <if test="dTitle != null">
+        d_title = #{dTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="dContent != null">
+        d_content = #{dContent,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publisherId != null">
+        publisher_id = #{publisherId,jdbcType=CHAR},
+      </if>
+      <if test="hasImage != null">
+        has_image = #{hasImage,jdbcType=SMALLINT},
+      </if>
+      <if test="dType != null">
+        d_type = #{dType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTag != null">
+        d_tag = #{dTag,jdbcType=VARCHAR},
+      </if>
+      <if test="dBrowerNum != null">
+        d_brower_num = #{dBrowerNum,jdbcType=INTEGER},
+      </if>
+      <if test="dNiceNum != null">
+        d_nice_num = #{dNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="dUnniceNum != null">
+        d_unnice_num = #{dUnniceNum,jdbcType=INTEGER},
+      </if>
+      <if test="dCommentNum != null">
+        d_comment_num = #{dCommentNum,jdbcType=INTEGER},
+      </if>
+      <if test="dShareNum != null">
+        d_share_num = #{dShareNum,jdbcType=INTEGER},
+      </if>
+      <if test="dScore != null">
+        d_score = #{dScore,jdbcType=DOUBLE},
+      </if>
+      <if test="dCollectionNum != null">
+        d_collection_num = #{dCollectionNum,jdbcType=INTEGER},
+      </if>
+      <if test="dSensitive != null">
+        d_sensitive = #{dSensitive,jdbcType=SMALLINT},
+      </if>
+      <if test="dReport != null">
+        d_report = #{dReport,jdbcType=SMALLINT},
+      </if>
+      <if test="dAvailable != null">
+        d_available = #{dAvailable,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where d_id = #{dId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soooofun.pojo.Dz">
+    update dz
+    set d_title = #{dTitle,jdbcType=VARCHAR},
+      d_content = #{dContent,jdbcType=VARCHAR},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      publisher_id = #{publisherId,jdbcType=CHAR},
+      has_image = #{hasImage,jdbcType=SMALLINT},
+      d_type = #{dType,jdbcType=VARCHAR},
+      d_tag = #{dTag,jdbcType=VARCHAR},
+      d_brower_num = #{dBrowerNum,jdbcType=INTEGER},
+      d_nice_num = #{dNiceNum,jdbcType=INTEGER},
+      d_unnice_num = #{dUnniceNum,jdbcType=INTEGER},
+      d_comment_num = #{dCommentNum,jdbcType=INTEGER},
+      d_share_num = #{dShareNum,jdbcType=INTEGER},
+      d_score = #{dScore,jdbcType=DOUBLE},
+      d_collection_num = #{dCollectionNum,jdbcType=INTEGER},
+      d_sensitive = #{dSensitive,jdbcType=SMALLINT},
+      d_report = #{dReport,jdbcType=SMALLINT},
+      d_available = #{dAvailable,jdbcType=SMALLINT}
+    where d_id = #{dId,jdbcType=CHAR}
+  </update>
+</mapper>
