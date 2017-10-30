@@ -1,0 +1,342 @@
+*{
+			margin: 0;
+			padding: 0;
+		}
+		#container {
+			width: 100%;
+		}
+		a{
+			text-decoration: none;
+			color: #9b8878;
+		}
+		h1, h2, h3, h4, h5, h6 {
+		    font-size: 100%;
+		    font-weight: 400;
+		}
+		li, ol, ul {
+			list-style: none;
+		}
+		.head {
+			width: 100%;
+			height: 60px;
+			background:#0d79d1;
+		}
+		.content-block{
+			width: 960px;
+			margin: 0 auto;
+			position: relative;
+			padding: 0 10px;
+		}
+		.head .logo {
+			width: 207px;
+			height: 79px;
+			float: left;
+		}
+		.head .logo a {
+			display: block;
+			height: 79px;
+			width: 207px;
+			text-indent: -999999px;
+			background-image: url(img/logo2016.png);
+		}
+		.menu-bar {
+			float: left;
+			margin: 0 10px;
+		}
+		.menu-bar a {
+			float: left;
+		    margin-right: 1px;
+		    padding: 0 70px;
+		    text-align: center;
+		    line-height: 60px;
+		    display: block;
+		    font-size: 16.5px;
+		    color: #EFEFEF;
+		    height: 60px;
+		}
+		.menu-bar .one {
+			padding-left: 0px;
+		}
+		.menu-bar a:hover {
+			background-color: rgba(255,227,111,.7);
+		}
+		.head .login {
+			line-height: 60px;
+		    float: right;
+		    text-align: right;
+		}
+		.head .login a {
+			color: #EFEFEF;
+		}
+		.main {
+			height: 1622px;
+			background: rgba(140, 140, 140, 0.07);
+		}
+		.main .col1 {
+			width: 640px;
+			float: left;
+			margin: 16px 16px 0 0;
+			position: relative;
+		}
+		.main .col2 {
+		    float: left;
+		    position: static;
+		    width: 300px;
+		    height: 600px;
+   			background: #0f88eb;
+		    margin: 16px 0 0 0;
+		    font-size: 12px;
+		}
+		.main .ranking{
+			float: left;
+		    position: static;
+		    width: 300px;
+		    height: 400px;
+   			background: #0f88eb;
+		    margin: 16px 0 0 0;
+		    font-size: 12px;
+		}
+		.main .col1 .block {
+		    background-color: #fff;
+		    clear: both;
+		    margin-bottom: 16px;
+		    padding: 18px 20px;
+		}
+		.author {
+		    margin: 0 0 17px;
+		    clear: both;
+		    height: 35px;
+		}
+		.clearfix {
+		    display: block;
+		}
+		.author a {
+			float: left;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 35px;
+		}
+		.author img {
+			width: 35px;
+			height: 35px;
+			border-radius: 35px;
+			padding: 0;
+			margin-right: 10px;
+		}
+		.articleGender {
+		    width: 30px;
+		    height: 16px;
+		    float: left;
+		    line-height: 16px;
+		    font-size: 9px;
+		    text-align: center;
+		    padding-left: 12px;
+		    margin-top: 10px;
+		    margin-left: 8px;
+		    color: black;
+		    /*background-size: cover;*/
+		}
+		.article .contentHerf {
+			display: block;
+		}
+		.article .content{
+			margin-bottom: 10px;
+			font-size: 16px;
+			line-height: 1.8;
+			word-wrap: break-word;
+			color: #333;
+		}
+		.article .contentForAll{
+			display: inline-block;
+			font-size: 12px;
+			border: 1px solid #0d79d1;
+			width: 58px;
+			text-align: center;
+			line-height: 24px;
+			color: #0d79d1;
+		}
+		.stats {
+			font-size: 12px;
+			color: #999;
+			margin:20px 0 10px;
+		}
+		.stats i {
+		    font-style: normal;
+		}
+		.stats a {
+			color: #999;
+		}
+		.stats-buttons {
+		    float: left;
+		}
+		.stats-buttons ul {
+		    margin-top: 5px;
+		    margin-left: 8px;
+		}
+		.stats-buttons ul li {
+		    float: left;
+		    margin-right: 20px;
+		    text-align: center;
+		}
+		.stats-buttons ul li a {
+		    display: block;
+		    text-align: center;
+		}
+		.stats-buttons .up a i {
+		    display: block;
+		    width: 30px;
+		    height: 30px;
+		    /*background-color: #0d79d1;*/
+		    background-repeat: no-repeat;
+		}
+		.hidden {
+		    display: none;
+		}
+		.stats-buttons .down a i {
+		    display: block;
+		    width: 30px;
+		    height: 30px;
+		    /*background-color: #0d79d1;*/
+		    background-repeat: no-repeat;
+		}
+		.stats-buttons .comments a i {
+		    display: block;
+		    width: 30px;
+		    height: 30px;
+		    /*background-color: #0d79d1;*/
+		    background-repeat: no-repeat;
+		}
+		.single-share {
+		    float: right;
+		    margin-top: 3px;
+		}
+		.single-share a {
+		    display: inline-block;
+		    width: 24px;
+		    height: 24px;
+		    margin-left: 10px;
+		    /*text-indent: -9999px;*/
+		    /*background-image: url(img/icongroup.png);*/
+		    background-repeat: no-repeat;
+		    cursor: pointer;
+		}
+		.single-share .share-wechat {
+		    background-position: 0 -79px;
+		}
+		.single-share .share-qq {
+		    background-position: 0 -151px;
+		}
+		.single-share .share-qzone {
+		    background-position: 0 -127px;
+		}
+		.single-share .share-weibo {
+		    background-position: 0 -103px;
+		}
+		.single-clear {
+		    clear: both;
+		}
+		.indexGodCmt {
+		    display: block;
+		    background-color: #fff;
+		    margin-top: 15px;
+		    overflow: hidden;
+		    zoom: 1;
+		}
+		.indexGodCmt .cmtMain {
+		    float: left;
+		    width: 600px;
+		}
+		.indexGodCmt .cmtMain .cmt-name {
+		    height: 21px;
+		    display: block;
+		    float: left;
+		    color: #9b8878;
+		    line-height: 180%;
+		}
+		.indexGodCmt .cmtMain .main-text {
+		    line-height: 180%;
+		    color: #404040;
+		}
+		.indexGodCmt .likenum {
+		    margin-top: 1px;
+		    display: inline-block;
+		    height: 21px;
+		    line-height: 21px;
+		    font-size: 12px;
+		    color: #b4b4b4;
+		    position: relative;
+		    margin-left: 18px;
+		}
+		.indexGodCmt .likenum img {
+		    left: -17px;
+		    top: 5px;
+		    position: absolute;
+		    height: 11px;
+		}
+		.pagination {
+		    margin-bottom: 20px;
+		    margin-left: 110px;
+		    padding: 0;
+		}
+		.pagination li {
+		    display: inline-block;
+		}
+		
+		.current, .dots, .next, .page-numbers, .prev {
+		    display: block;
+		    padding: 10px 16px;
+		    color: #666;
+		}
+		.current, .next {
+		    background: #0d79d1;
+		    color: #fff;
+		}
+		.page-numbers, .prev {
+		    background: #fff;
+		}
+		.foot {
+		    width: 100%;
+		    height: 330px;
+		    background: #fff;
+		    font-size: 14px;
+		}
+		.foot-nav {
+		    width: 960px;
+		    height: 147px;
+		    margin: 0 auto;
+		    padding: 20px 0;
+		}
+		.foot-nav-col {
+		    float: left;
+		    width: 20%;
+		}
+		.foot-nav h3 {
+		    margin: 0 0 8px 0;
+		    font-size: 18px;
+		}
+		.foot-nav-col ul li {
+		    line-height: 1.8;
+		}
+		.foot-nav-col ul li {
+		    line-height: 1.8;
+		}
+		.foot a {
+		    color: #666;
+		}
+		.foot-copyrights {
+		    width: 960px;
+		    /*height: 150px;*/
+		    padding: 20px 0;
+		    margin: 0 auto;
+		    font-size: 12px;
+		    text-align: center;
+		    border-top: 1px solid #efefef;
+		}
+		.foot-copyrights p {
+		    display: inline-block;
+		}
+		.foot-copyrights span {
+		    margin-left: 10px;
+		    padding-left: 10px;
+		    border-left: 1px solid #efefef;
+		}
