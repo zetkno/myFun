@@ -21,13 +21,11 @@ public class ImageCodeController {
     @Resource
     private DefaultKaptcha captchaProducer;
 
-    public void setCaptchaProducer(DefaultKaptcha captchaProducer)
-    {
-       this.captchaProducer = captchaProducer;
+    public void setCaptchaProducer(DefaultKaptcha captchaProducer) {
+        this.captchaProducer = captchaProducer;
     }
 
-    public DefaultKaptcha getCaptchaProducer()
-    {
+    public DefaultKaptcha getCaptchaProducer() {
         return this.captchaProducer;
     }
 

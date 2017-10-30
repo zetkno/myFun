@@ -28,19 +28,18 @@ public class LoginController {
     /**
      * 用户登录
      */
-    @RequestMapping(value="/login", method= RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject login(HttpServletRequest request, HttpServletResponse response){
+    public JSONObject login(HttpServletRequest request, HttpServletResponse response) {
         JSONObject flag = new JSONObject();
         String verifyCode = request.getParameter("verifyCode");
         HttpSession session = request.getSession();
-        String code = (String)session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-        System.out.println("取出的验证码:"+code);
+        String code = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        System.out.println("取出的验证码:" + code);
         //首先校验验证码
-        if(!verifyCode.equals(code))
-        {
-            flag.put("flag",false);
-            flag.put("error","验证码输入有误");
+        if (!verifyCode.equals(code)) {
+            flag.put("flag", false);
+            flag.put("error", "验证码输入有误");
             return flag;
         }
 
@@ -60,49 +59,49 @@ public class LoginController {
             System.out.println("对用户[" + username + "]进行登录验证..验证开始");
             currentUser.login(token);
             System.out.println("对用户[" + username + "]进行登录验证..验证通过");
-        }catch(UnknownAccountException uae){
+        } catch (UnknownAccountException uae) {
             System.out.println("对用户[" + username + "]进行登录验证..验证未通过,未知账户");
-            flag.put("flag",false);
-            flag.put("error","账户名不存在");
-        }catch(IncorrectCredentialsException ice){
+            flag.put("flag", false);
+            flag.put("error", "账户名不存在");
+        } catch (IncorrectCredentialsException ice) {
             System.out.println("对用户[" + username + "]进行登录验证..验证未通过,错误的凭证");
-            flag.put("flag",false);
-            flag.put("error","密码错误");
-        }catch(LockedAccountException lae){
+            flag.put("flag", false);
+            flag.put("error", "密码错误");
+        } catch (LockedAccountException lae) {
             System.out.println("对用户[" + username + "]进行登录验证..验证未通过,账户已锁定");
-            flag.put("flag",false);
-            flag.put("error","账户已锁定");
-        }catch(ExcessiveAttemptsException eae){
+            flag.put("flag", false);
+            flag.put("error", "账户已锁定");
+        } catch (ExcessiveAttemptsException eae) {
             System.out.println("对用户[" + username + "]进行登录验证..验证未通过,错误次数过多");
-            flag.put("flag",false);
-            flag.put("error","密码错误次数过多");
-        }catch(AuthenticationException ae){
+            flag.put("flag", false);
+            flag.put("error", "密码错误次数过多");
+        } catch (AuthenticationException ae) {
             //通过处理Shiro的运行时AuthenticationException就可以控制用户登录失败或密码错误时的情景
             System.out.println("对用户[" + username + "]进行登录验证..验证未通过,堆栈轨迹如下");
             ae.printStackTrace();
-            flag.put("flag",false);
-            flag.put("error",ae.getMessage());
+            flag.put("flag", false);
+            flag.put("error", ae.getMessage());
         }
         //验证是否登录成功
-        if(currentUser.isAuthenticated()){
+        if (currentUser.isAuthenticated()) {
 //            Session session = currentUser.getSession();
             //对Session进行管理
-            flag.put("flag",true);
+            flag.put("flag", true);
             System.out.println("用户[" + username + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
-        }else{
+        } else {
             token.clear();
-            if(!flag.containsKey("flag")){
-                flag.put("flag",false);
+            if (!flag.containsKey("flag")) {
+                flag.put("flag", false);
             }
-            if(!flag.containsKey("error")){
-                flag.put("error","登陆认证错误");
+            if (!flag.containsKey("error")) {
+                flag.put("error", "登陆认证错误");
             }
         }
         return flag;
     }
 
-    @RequestMapping(value="/main")
-    public String main(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping(value = "/main")
+    public String main(HttpServletRequest request, HttpServletResponse response) {
         return "main";
     }
 
@@ -111,7 +110,7 @@ public class LoginController {
      * 用户登出
      */
     @RequestMapping("/logout")
-    public String logout(HttpServletRequest request){
+    public String logout(HttpServletRequest request) {
         SecurityUtils.getSubject().logout();
         return InternalResourceViewResolver.REDIRECT_URL_PREFIX + "/";
     }

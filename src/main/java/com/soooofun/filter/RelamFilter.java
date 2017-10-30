@@ -23,7 +23,7 @@ public class RelamFilter extends AuthorizingRealm {
         //到数据库查是否有此对象
         User user = userService.getUserByAccount(loginName);
         if (user != null) {
-            if(user.getAvailable() != 1){
+            if (user.getAvailable() != 1) {
                 throw new AuthenticationException("该账号已被禁用");
             }
             //权限信息对象info,用来存放查出的用户的所有的角色（role）及权限（permission）
@@ -49,7 +49,7 @@ public class RelamFilter extends AuthorizingRealm {
         //查出是否有此用户
         User user = userService.getUserByAccount(token.getUsername());
         if (user != null) {
-            if(user.getAvailable() != 1){
+            if (user.getAvailable() != 1) {
                 throw new AuthenticationException("该账号已被禁用");
             }
             //若存在，将此用户存放到登录认证info中
