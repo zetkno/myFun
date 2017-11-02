@@ -33,7 +33,7 @@
     where d_id = #{dId,jdbcType=CHAR}
   </select>
 
-  <select id="selectDzList" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectDzList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from dz
@@ -41,7 +41,7 @@
     limit #{0},#{1}
   </select>
 
-  <select id="selectDzListByType" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectDzListByType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from dz
@@ -49,7 +49,7 @@
     limit #{1},#{2}
   </select>
 
-  <select id="selectDzListBySearch" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectDzListBySearch" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from dz
