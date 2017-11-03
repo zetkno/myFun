@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soooofun.dao.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.soooofun.pojo.Comment">
+    <id column="c_id" jdbcType="CHAR" property="cId" />
+    <result column="c_content" jdbcType="VARCHAR" property="cContent" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="cTime" />
+    <result column="c_user_id" jdbcType="CHAR" property="cUserId" />
+    <result column="c_d_id" jdbcType="CHAR" property="cDId" />
+    <result column="c_floor" jdbcType="INTEGER" property="cFloor" />
+    <result column="c_is_reply" jdbcType="SMALLINT" property="cIsReply" />
+    <result column="c_reply_user_id" jdbcType="CHAR" property="cReplyUserId" />
+    <result column="c_reply_user_floor" jdbcType="INTEGER" property="cReplyUserFloor" />
+    <result column="c_nice_num" jdbcType="INTEGER" property="cNiceNum" />
+    <result column="c_sensitive" jdbcType="SMALLINT" property="cSensitive" />
+    <result column="c_available" jdbcType="SMALLINT" property="cAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_id, c_content, c_time, c_user_id, c_d_id, c_floor, c_is_reply, c_reply_user_id, 
+    c_reply_user_floor, c_nice_num, c_sensitive, c_available
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from comment
+    where c_id = #{cId,jdbcType=CHAR}
+  </select>
+
+  <select id="selectHotComments" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where c_d_id = #{cDId,jdbcType=CHAR} ORDER BY c_nice_num DESC limit 3;
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from comment
+    where c_id = #{cId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.soooofun.pojo.Comment">
+    insert into comment (c_id, c_content, c_time, 
+      c_user_id, c_d_id, c_floor, c_is_reply, 
+      c_reply_user_id, c_reply_user_floor, c_nice_num, 
+      c_sensitive, c_available)
+    values (#{cId,jdbcType=CHAR}, #{cContent,jdbcType=VARCHAR}, #{cTime,jdbcType=TIMESTAMP}, 
+      #{cUserId,jdbcType=CHAR}, #{cDId,jdbcType=CHAR}, #{cFloor,jdbcType=INTEGER}, #{cIsReply,jdbcType=SMALLINT}, 
+      #{cReplyUserId,jdbcType=CHAR}, #{cReplyUserFloor,jdbcType=INTEGER}, #{cNiceNum,jdbcType=INTEGER}, 
+      #{cSensitive,jdbcType=SMALLINT}, #{cAvailable,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.soooofun.pojo.Comment">
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        c_id,
+      </if>
+      <if test="cContent != null">
+        c_content,
+      </if>
+      <if test="cTime != null">
+        c_time,
+      </if>
+      <if test="cUserId != null">
+        c_user_id,
+      </if>
+      <if test="cDId != null">
+        c_d_id,
+      </if>
+      <if test="cFloor != null">
+        c_floor,
+      </if>
+      <if test="cIsReply != null">
+        c_is_reply,
+      </if>
+      <if test="cReplyUserId != null">
+        c_reply_user_id,
+      </if>
+      <if test="cReplyUserFloor != null">
+        c_reply_user_floor,
+      </if>
+      <if test="cNiceNum != null">
+        c_nice_num,
+      </if>
+      <if test="cSensitive != null">
+        c_sensitive,
+      </if>
+      <if test="cAvailable != null">
+        c_available,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=CHAR},
+      </if>
+      <if test="cContent != null">
+        #{cContent,jdbcType=VARCHAR},
+      </if>
+      <if test="cTime != null">
+        #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cUserId != null">
+        #{cUserId,jdbcType=CHAR},
+      </if>
+      <if test="cDId != null">
+        #{cDId,jdbcType=CHAR},
+      </if>
+      <if test="cFloor != null">
+        #{cFloor,jdbcType=INTEGER},
+      </if>
+      <if test="cIsReply != null">
+        #{cIsReply,jdbcType=SMALLINT},
+      </if>
+      <if test="cReplyUserId != null">
+        #{cReplyUserId,jdbcType=CHAR},
+      </if>
+      <if test="cReplyUserFloor != null">
+        #{cReplyUserFloor,jdbcType=INTEGER},
+      </if>
+      <if test="cNiceNum != null">
+        #{cNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="cSensitive != null">
+        #{cSensitive,jdbcType=SMALLINT},
+      </if>
+      <if test="cAvailable != null">
+        #{cAvailable,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soooofun.pojo.Comment">
+    update comment
+    <set>
+      <if test="cContent != null">
+        c_content = #{cContent,jdbcType=VARCHAR},
+      </if>
+      <if test="cTime != null">
+        c_time = #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cUserId != null">
+        c_user_id = #{cUserId,jdbcType=CHAR},
+      </if>
+      <if test="cDId != null">
+        c_d_id = #{cDId,jdbcType=CHAR},
+      </if>
+      <if test="cFloor != null">
+        c_floor = #{cFloor,jdbcType=INTEGER},
+      </if>
+      <if test="cIsReply != null">
+        c_is_reply = #{cIsReply,jdbcType=SMALLINT},
+      </if>
+      <if test="cReplyUserId != null">
+        c_reply_user_id = #{cReplyUserId,jdbcType=CHAR},
+      </if>
+      <if test="cReplyUserFloor != null">
+        c_reply_user_floor = #{cReplyUserFloor,jdbcType=INTEGER},
+      </if>
+      <if test="cNiceNum != null">
+        c_nice_num = #{cNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="cSensitive != null">
+        c_sensitive = #{cSensitive,jdbcType=SMALLINT},
+      </if>
+      <if test="cAvailable != null">
+        c_available = #{cAvailable,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soooofun.pojo.Comment">
+    update comment
+    set c_content = #{cContent,jdbcType=VARCHAR},
+      c_time = #{cTime,jdbcType=TIMESTAMP},
+      c_user_id = #{cUserId,jdbcType=CHAR},
+      c_d_id = #{cDId,jdbcType=CHAR},
+      c_floor = #{cFloor,jdbcType=INTEGER},
+      c_is_reply = #{cIsReply,jdbcType=SMALLINT},
+      c_reply_user_id = #{cReplyUserId,jdbcType=CHAR},
+      c_reply_user_floor = #{cReplyUserFloor,jdbcType=INTEGER},
+      c_nice_num = #{cNiceNum,jdbcType=INTEGER},
+      c_sensitive = #{cSensitive,jdbcType=SMALLINT},
+      c_available = #{cAvailable,jdbcType=SMALLINT}
+    where c_id = #{cId,jdbcType=CHAR}
+  </update>
+</mapper>

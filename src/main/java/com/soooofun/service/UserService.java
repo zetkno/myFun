@@ -7,4 +7,6 @@ import com.soooofun.pojo.User;
  */
 public interface UserService {
     User getUserByAccount(String account);
+
+    User getUserById(String id);
 }

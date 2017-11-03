@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script>var CONTEXTPATH = "${pageContext.request.contextPath}" </script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="static/css/index.css"/>
 
 </head>
+
 <body>
+<%@include file="/WEB-INF/jsp/common/tmpl.jsp"%>
 	<div id="container">
 
 		<div id="header" class="head">
@@ -27,394 +30,394 @@
 		<div class="main">
 			<div class="content-block">
 				<div id="content-left" class="col1">
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-									<!-- <div class="likenum">
-										<img src="static/images/like@1.5.png">
-									17
-									</div> -->
+									<%--<!-- <div class="likenum">--%>
+										<%--<img src="static/images/like@1.5.png">--%>
+									<%--17--%>
+									<%--</div> -->--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
 
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
-					
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
-					
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
 
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
-					
-					<!-- 笑话卡片 -->
-					<div class="article block">
-						<div class="author clearfix">
-							<a href=""><img src="" alt=""></a>
-							<a href="">
-								<h2>用户名称</h2>
-							</a>
-							<div class="articleGender">15级</div>
-						</div>
-						<a href="#" class="contentHerf">
-							<div class="content">
-								<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容
-								笑话内容笑话内容
-								笑话内容笑话内容</span>
-								<span class="contentForAll">查看全文</span>
-							</div>
-						</a>
-						<!-- 图片或gif -->
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<!-- 笑话卡片 -->--%>
+					<%--<div class="article block">--%>
+						<%--<div class="author clearfix">--%>
+							<%--<a href=""><img src="" alt=""></a>--%>
+							<%--<a href="">--%>
+								<%--<h2>用户名称</h2>--%>
+							<%--</a>--%>
+							<%--<div class="articleGender">15级</div>--%>
+						<%--</div>--%>
+						<%--<a href="#" class="contentHerf">--%>
+							<%--<div class="content">--%>
+								<%--<span>笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容笑话内容--%>
+								<%--笑话内容笑话内容--%>
+								<%--笑话内容笑话内容</span>--%>
+								<%--<span class="contentForAll">查看全文</span>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+						<%--<!-- 图片或gif -->--%>
 
-						<!-- <div class="stats">
-							<span class="stats-vote tag-one">标签1</span>
-							<span class="stats-comments tag-two">
-								标签2
-							</span>
-						</div> -->
+						<%--<!-- <div class="stats">--%>
+							<%--<span class="stats-vote tag-one">标签1</span>--%>
+							<%--<span class="stats-comments tag-two">--%>
+								<%--标签2--%>
+							<%--</span>--%>
+						<%--</div> -->--%>
 
-						<div class="stats-buttons bar clearfix">
-							<ul class="clearfix">
-								<li class="up">
-									<a href="" class="voting">
-									<i>标签1</i>
-									<span class="number hidden">508</span>
-								</a>
-								</li>
-								<li class="down">
-									<a href="" class="voting">
-									<i>标签2</i>
-									<span class="number hidden">-7</span>
-								</a></li>
-								<li class="comments">
-									<a href="" class="voting">
-									<i>举报</i>
-								</a>
-								</li>
-							</ul>
-						</div>
-						<div class="single-share">
-							<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>
-							<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>
-							<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>
-							<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>
-						</div>
-						<div class="single-clear"></div>
-						<a href="" class="indexGodCmt" target="_blank">
-							<div class="cmtMain">
-								<span class="cmt-name">评论者：</span>
-								<div class="main-text">
-								评论内容
+						<%--<div class="stats-buttons bar clearfix">--%>
+							<%--<ul class="clearfix">--%>
+								<%--<li class="up">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签1</i>--%>
+									<%--<span class="number hidden">508</span>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+								<%--<li class="down">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>标签2</i>--%>
+									<%--<span class="number hidden">-7</span>--%>
+								<%--</a></li>--%>
+								<%--<li class="comments">--%>
+									<%--<a href="" class="voting">--%>
+									<%--<i>举报</i>--%>
+								<%--</a>--%>
+								<%--</li>--%>
+							<%--</ul>--%>
+						<%--</div>--%>
+						<%--<div class="single-share">--%>
+							<%--<a class="share-wechat" data-type="wechat" title="分享到微信" rel="nofollow">点赞</a>--%>
+							<%--<a class="share-qq" data-type="qq" title="分享到QQ" rel="nofollow">反对</a>--%>
+							<%--<a class="share-qzone" data-type="qzone" title="分享到QQ空间" rel="nofollow">收藏</a>--%>
+							<%--<a class="share-weibo" data-type="weibo" title="分享到微博" rel="nofollow">分享</a>--%>
+						<%--</div>--%>
+						<%--<div class="single-clear"></div>--%>
+						<%--<a href="" class="indexGodCmt" target="_blank">--%>
+							<%--<div class="cmtMain">--%>
+								<%--<span class="cmt-name">评论者：</span>--%>
+								<%--<div class="main-text">--%>
+								<%--评论内容--%>
 
-								</div>
-							</div>
-						</a>
-					</div>
+								<%--</div>--%>
+							<%--</div>--%>
+						<%--</a>--%>
+					<%--</div>--%>
 
 					<!-- 全局翻页组件 -->
 					<ul class="pagination">
@@ -623,4 +626,8 @@
 		</div>
 	</div>
 </body>
+<script src="static/jquery/jquery-1.8.3.min.js"></script>
+<script src="static/jquery/jquery.tmpl.js"></script>
+<script src="static/script/main/main.js"></script>
+
 </html>
