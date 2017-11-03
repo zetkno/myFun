@@ -1,4 +1,4 @@
-package com.soooofun.init;
+package com.soooofun.utils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

@@ -2,11 +2,6 @@ package com.soooofun.pojo;
 
 import java.util.Date;
 
-/**
- * @author hanlaiming
- * 段子实体类
- */
-
 public class Dz {
     private String dId;
 
@@ -18,7 +13,7 @@ public class Dz {
 
     private String publisherId;
 
-    private Short hasImage;
+    private Integer hasImage;
 
     private String dType;
 
@@ -38,11 +33,13 @@ public class Dz {
 
     private Integer dCollectionNum;
 
-    private Short dSensitive;
+    private Integer dSensitive;
 
-    private Short dReport;
+    private Integer dReport;
 
-    private Short dAvailable;
+    private Integer dAvailable;
+
+    private String dSource;
 
     public String getdId() {
         return dId;
@@ -84,11 +81,11 @@ public class Dz {
         this.publisherId = publisherId == null ? null : publisherId.trim();
     }
 
-    public Short getHasImage() {
+    public Integer getHasImage() {
         return hasImage;
     }
 
-    public void setHasImage(Short hasImage) {
+    public void setHasImage(Integer hasImage) {
         this.hasImage = hasImage;
     }
 
@@ -164,27 +161,35 @@ public class Dz {
         this.dCollectionNum = dCollectionNum;
     }
 
-    public Short getdSensitive() {
+    public Integer getdSensitive() {
         return dSensitive;
     }
 
-    public void setdSensitive(Short dSensitive) {
+    public void setdSensitive(Integer dSensitive) {
         this.dSensitive = dSensitive;
     }
 
-    public Short getdReport() {
+    public Integer getdReport() {
         return dReport;
     }
 
-    public void setdReport(Short dReport) {
+    public void setdReport(Integer dReport) {
         this.dReport = dReport;
     }
 
-    public Short getdAvailable() {
+    public Integer getdAvailable() {
         return dAvailable;
     }
 
-    public void setdAvailable(Short dAvailable) {
+    public void setdAvailable(Integer dAvailable) {
         this.dAvailable = dAvailable;
+    }
+
+    public String getdSource() {
+        return dSource;
+    }
+
+    public void setdSource(String dSource) {
+        this.dSource = dSource == null ? null : dSource.trim();
     }
 }

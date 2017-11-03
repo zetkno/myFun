@@ -20,11 +20,12 @@
     <result column="d_sensitive" jdbcType="SMALLINT" property="dSensitive" />
     <result column="d_report" jdbcType="SMALLINT" property="dReport" />
     <result column="d_available" jdbcType="SMALLINT" property="dAvailable" />
+    <result column="d_source" jdbcType="VARCHAR" property="dSource" />
   </resultMap>
   <sql id="Base_Column_List">
     d_id, d_title, d_content, publish_time, publisher_id, has_image, d_type, d_tag, d_brower_num, 
     d_nice_num, d_unnice_num, d_comment_num, d_share_num, d_score, d_collection_num, 
-    d_sensitive, d_report, d_available
+    d_sensitive, d_report, d_available, d_source
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -57,7 +58,6 @@
     limit #{1},#{2}
   </select>
 
-
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from dz
     where d_id = #{dId,jdbcType=CHAR}
@@ -68,15 +68,15 @@
       d_type, d_tag, d_brower_num, 
       d_nice_num, d_unnice_num, d_comment_num, 
       d_share_num, d_score, d_collection_num, 
-      d_sensitive, d_report, d_available
-      )
+      d_sensitive, d_report, d_available, 
+      d_source)
     values (#{dId,jdbcType=CHAR}, #{dTitle,jdbcType=VARCHAR}, #{dContent,jdbcType=VARCHAR}, 
       #{publishTime,jdbcType=TIMESTAMP}, #{publisherId,jdbcType=CHAR}, #{hasImage,jdbcType=SMALLINT}, 
       #{dType,jdbcType=VARCHAR}, #{dTag,jdbcType=VARCHAR}, #{dBrowerNum,jdbcType=INTEGER}, 
       #{dNiceNum,jdbcType=INTEGER}, #{dUnniceNum,jdbcType=INTEGER}, #{dCommentNum,jdbcType=INTEGER}, 
       #{dShareNum,jdbcType=INTEGER}, #{dScore,jdbcType=DOUBLE}, #{dCollectionNum,jdbcType=INTEGER}, 
-      #{dSensitive,jdbcType=SMALLINT}, #{dReport,jdbcType=SMALLINT}, #{dAvailable,jdbcType=SMALLINT}
-      )
+      #{dSensitive,jdbcType=SMALLINT}, #{dReport,jdbcType=SMALLINT}, #{dAvailable,jdbcType=SMALLINT}, 
+      #{dSource,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.soooofun.pojo.Dz">
     insert into dz
@@ -135,6 +135,9 @@
       <if test="dAvailable != null">
         d_available,
       </if>
+      <if test="dSource != null">
+        d_source,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="dId != null">
@@ -190,6 +193,9 @@
       </if>
       <if test="dAvailable != null">
         #{dAvailable,jdbcType=SMALLINT},
+      </if>
+      <if test="dSource != null">
+        #{dSource,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -247,6 +253,9 @@
       <if test="dAvailable != null">
         d_available = #{dAvailable,jdbcType=SMALLINT},
       </if>
+      <if test="dSource != null">
+        d_source = #{dSource,jdbcType=VARCHAR},
+      </if>
     </set>
     where d_id = #{dId,jdbcType=CHAR}
   </update>
@@ -268,7 +277,8 @@
       d_collection_num = #{dCollectionNum,jdbcType=INTEGER},
       d_sensitive = #{dSensitive,jdbcType=SMALLINT},
       d_report = #{dReport,jdbcType=SMALLINT},
-      d_available = #{dAvailable,jdbcType=SMALLINT}
+      d_available = #{dAvailable,jdbcType=SMALLINT},
+      d_source = #{dSource,jdbcType=VARCHAR}
     where d_id = #{dId,jdbcType=CHAR}
   </update>
 </mapper>

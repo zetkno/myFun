@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,7 +21,6 @@ import java.util.List;
  *
  */
 @Controller
-@RequestMapping("/home")
 public class DzController {
     @Autowired
     private DzService dzService;
@@ -34,7 +31,7 @@ public class DzController {
      */
     @RequestMapping("/home")
     @ResponseBody
-    public JSONArray homePage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public JSONArray homePage() throws IOException {
         System.out.println("in 1");
         List<Dz> dzList = dzService.getDzListByPage(Constant.HOME_PAGE,Constant.HOME_PAGE_SHOW_NUM);
         JSONArray result = new JSONArray();

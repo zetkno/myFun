@@ -8,5 +8,6 @@ package com.soooofun.utils;
 public class Constant {
     public static final int HOME_PAGE = 0;
     public static final int HOME_PAGE_SHOW_NUM = 10;
+    public static final String BLANK_NULL = "无";
 
 }

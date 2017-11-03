@@ -17,10 +17,10 @@ public interface DzMapper {
 
     int updateByPrimaryKey(Dz record);
 
-
     List<Dz> selectDzList(int start, int end);
 
     List<Dz> selectDzListByType(String type, int start, int end);
 
     List<Dz> selectDzListBySearch(String search, int start, int end);
+
 }
